@@ -44,7 +44,7 @@ function setup()
 
     -- Size of the vehicle, to be limited mostly by legal restriction of the way
     vehicle_length = 4.8, -- in meters, 4.8m is the length of large or familly car
-    vehicle_weight = 2000, -- in kilograms
+    vehicle_weight = 3500, -- in kilograms
 
     -- a list of suffixes to suppress in name change instructions. The suffixes also include common substrings of each other
     suffix_list = {
@@ -60,8 +60,7 @@ function setup()
       'lift_gate',
       'no',
       'entrance',
-      'height_restrictor',
-      'arch'
+      'height_restrictor'
     },
 
     access_tag_whitelist = Set {
@@ -136,6 +135,8 @@ function setup()
       'construction',
       'proposed'
     },
+
+    country_code = 'jp',
 
     speeds = Sequence {
       highway = {
@@ -267,6 +268,12 @@ function setup()
 
     -- List only exceptions
     maxspeed_table = {
+      ["jp:national"] = 60,
+      ["jp:motorway"] = 100,
+      ["jp:urban"] = 40,
+      ["jp:rural"] = 50,
+      ["jp:trunk"] = 80,
+      ["at:trunk"] = 100,
       ["at:rural"] = 100,
       ["at:trunk"] = 100,
       ["be:motorway"] = 120,
